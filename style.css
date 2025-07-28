@@ -194,10 +194,90 @@ input[type="range"]::-webkit-slider-thumb:hover {
     margin-bottom: 2rem;
 }
 
+.pressure-bar {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: var(--border-color);
+    border-radius: 10px;
+}
+
+#total-pressure-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 25px; /* Make it taller */
+    background-color: var(--color-danger);
+    border-radius: 5px;
+    transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    left: 0; /* Start at 0 */
+}
+
 .summary-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
+}
+
+.line-container {
+    position: relative;
+    width: 100%;
+    height: 150px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px; /* Padding on the sides */
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+.line-track {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.station-node {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 4px solid #4a90e2;
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.station-node .station-name {
+    position: absolute;
+    bottom: -25px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.train {
+    position: absolute;
+    width: 50px; /* Train width */
+    height: 30px; /* Train height */
+    background-color: var(--color-danger);
+    border-radius: 5px;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left 1s linear;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
     gap: 2rem 2.5rem;
     align-items: center;
 }

@@ -15,40 +15,30 @@
         </header>
 
         <div class="visualization-container">
-                <h2>实时运行模拟</h2>
-                <div id="station" class="station">
-                    <div class="platform-area">
-                        <div id="platform-passengers" class="passenger-group"></div>
-                        <div class="platform-info">
-                            <span>站台候车人数: <span id="platform-count">0</span></span>
-                        </div>
-                    </div>
-                    <div class="track-area">
-                        <div class="track"></div>
-                        <!-- Trains will be dynamically added here -->
-                    </div>
-                </div>
+            <h2>实时运行模拟</h2>
+            <div id="line-container" class="line-container">
+                <!-- Stations and tracks will be generated here -->
             </div>
+        </div>
 
         <div class="control-grid">
             <!-- 列车数量控制 -->
             <div class="control-card">
                 <h2>列车数量控制</h2>
                 <div class="slider-container">
-                    <input type="range" id="train-slider" min="2" max="6" value="4" step="2">
+                    <input type="range" id="train-slider" min="2" max="8" value="4" step="1">
                     <div class="slider-labels">
                         <span>2</span>
-                        <span>4</span>
-                        <span>6</span>
+                        <span>8</span>
                     </div>
                 </div>
-                <p>列车数量: <span id="train-count-value">2 → 4 → 6</span></p>
+                <p>列车数量: <span id="train-count-value">4</span></p>
                 <div class="progress-container">
                     <label>客流缓解程度</label>
                     <div class="progress-bar">
                         <div id="train-progress" class="progress-fill"></div>
                     </div>
-                    <span id="train-progress-value">25% → 75%</span>
+                    <span id="train-progress-value">-</span>
                 </div>
             </div>
 
@@ -56,19 +46,19 @@
             <div class="control-card">
                 <h2>发车间隔控制</h2>
                 <div class="slider-container">
-                    <input type="range" id="interval-slider" min="2" max="5" value="5" step="-1">
+                    <input type="range" id="interval-slider" min="0.5" max="3" value="3" step="0.25">
                      <div class="slider-labels">
-                        <span>5min</span>
-                        <span>2min</span>
+                        <span>0.5min</span>
+                        <span>3min</span>
                     </div>
                 </div>
-                <p>发车间隔: <span id="interval-value">5分钟 → 2分钟</span></p>
+                <p>发车间隔: <span id="interval-value">3</span> min</p>
                 <div class="progress-container">
                     <label>客流缓解程度</label>
                     <div class="progress-bar">
                         <div id="interval-progress" class="progress-fill"></div>
                     </div>
-                    <span id="interval-progress-value">30% → 80%</span>
+                    <span id="interval-progress-value">-</span>
                 </div>
             </div>
 
@@ -76,19 +66,19 @@
             <div class="control-card">
                 <h2>停站时间控制</h2>
                 <div class="slider-container">
-                    <input type="range" id="stop-time-slider" min="30" max="90" value="30">
+                    <input type="range" id="stop-time-slider" min="2" max="15" value="15">
                     <div class="slider-labels">
-                        <span>30s</span>
-                        <span>90s</span>
+                        <span>2s</span>
+                        <span>15s</span>
                     </div>
                 </div>
-                <p>停站时间: <span id="stop-time-value">30秒 → 90秒</span></p>
+                <p>停站时间: <span id="stop-time-value">15</span> s</p>
                 <div class="progress-container">
                     <label>客流缓解程度</label>
                     <div class="progress-bar">
                         <div id="stop-time-progress" class="progress-fill"></div>
                     </div>
-                    <span id="stop-time-progress-value">20% → 65%</span>
+                    <span id="stop-time-progress-value">-</span>
                 </div>
             </div>
 
@@ -96,19 +86,19 @@
             <div class="control-card">
                 <h2>列车速度控制</h2>
                 <div class="slider-container">
-                    <input type="range" id="speed-slider" min="50" max="80" value="80">
+                    <input type="range" id="speed-slider" min="50" max="120" value="50">
                     <div class="slider-labels">
-                        <span>80km/h</span>
                         <span>50km/h</span>
+                        <span>120km/h</span>
                     </div>
                 </div>
-                <p>列车速度: <span id="speed-value">80km/h → 50km/h</span></p>
+                <p>列车速度: <span id="speed-value">50</span> km/h</p>
                 <div class="progress-container">
                     <label>客流缓解程度</label>
                     <div class="progress-bar">
                         <div id="speed-progress" class="progress-fill"></div>
                     </div>
-                    <span id="speed-progress-value">15% → 55%</span>
+                    <span id="speed-progress-value">-</span>
                 </div>
             </div>
         </div>
